@@ -17,8 +17,12 @@ int main() {
   insertionSort(sortTest, length);
   printIntArray(sortTest, length);*/
 
-  printf("Decrease insertion sort: ");
+  /*printf("Decrease insertion sort: ");
   insertionSortDecrease(sortTest, length);
+  printIntArray(sortTest, length);*/
+
+  printf("Selection sort: ");
+  selectionSort(sortTest, length);
   printIntArray(sortTest, length);
 
   return 0;
