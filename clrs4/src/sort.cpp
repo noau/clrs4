@@ -36,6 +36,17 @@ void insertionSortDecrease(int* list, int length) {
   }
 }
 
+/**
+ * 伪代码：
+ * for i = 1 to n - 1
+ *  min = i
+ *  for j = i + 1 to n
+ *      if min > A[j]
+ *          min = j
+ *  t = A[i]
+ *  A[i] = A[min]
+ *  A[min] = t
+ */
 void selectionSort(int* list, int length) {
   for (int i = 0; i < length - 1; i++) {
     int min = i;
@@ -44,8 +55,61 @@ void selectionSort(int* list, int length) {
         min = j;
       }
     }
-    int t = *(list + i);
-    *(list + i) = *(list + min);
-    *(list + min) = t;
+    exchange(list + i, list + min);
   }
+}
+
+void mergeSort(int* list, int length) {
+  if (length > 1) {
+    int mid = length / 2;
+    mergeSort(list, mid);
+    mergeSort(list + mid, length - mid);
+    merge(list, mid, length);
+  }
+}
+
+/**
+ * 流程：
+ *  复制左右已排序数组
+ *  比较左右列表最小值，写入原数组
+ *  复制剩余元素
+ * 伪代码：
+ *
+ */
+void merge(int* list, int mid, int length) {
+  int numLeft = mid, numRight = length - mid;
+  int *left = new int[numLeft], *right = new int[numRight];
+  for (int i = 0; i < numLeft; i++) {
+    *(left + i) = *(list + i);
+  }
+  for (int i = 0; i < numRight; i++) {
+    *(right + i) = *(list + numLeft + i);
+  }
+  int i = 0, j = 0, k = 0;
+  while (i < numLeft && j < numRight) {
+    if (*(left + i) < *(right + j)) {
+      *(list + k) = *(left + i);
+      i++;
+    } else {
+      *(list + k) = *(right + j);
+      j++;
+    }
+    k++;
+  }
+  while (i < numLeft) {
+    *(list + k) = *(left + i);
+    i++;
+    k++;
+  }
+  while (j < numRight) {
+    *(list + k) = *(right + j);
+    j++;
+    k++;
+  }
+}
+
+void exchange(int* a, int* b) {
+  int t = *a;
+  *a = *b;
+  *b = t;
 }

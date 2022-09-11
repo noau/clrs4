@@ -7,8 +7,9 @@
 #include <stdio.h>
 
 int main() {
-  int sortTest[] = {8, 76, 57, 6, 54, 5, 6, 7, 8, 90, 9, 7, 6, 5, 4, 3, 4, 6};
-  const int length = 18;
+  int sortTest[] = {8, 76, 0, 98, 7,  6, 54, 7, 34, 56, 57, 6, 54,
+                    5, 6,  7, 8,  90, 9, 7,  6, 5,  4,  3,  4, 6};
+  const int length = 26;
 
   printf("Test data: ");
   printIntArray(sortTest, length);
@@ -21,8 +22,12 @@ int main() {
   insertionSortDecrease(sortTest, length);
   printIntArray(sortTest, length);*/
 
-  printf("Selection sort: ");
+  /*printf("Selection sort: ");
   selectionSort(sortTest, length);
+  printIntArray(sortTest, length);*/
+
+  printf("Merge sort: ");
+  mergeSort(sortTest, length);
   printIntArray(sortTest, length);
 
   return 0;

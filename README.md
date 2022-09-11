@@ -6,5 +6,7 @@
 
 - Insertion Sort£®≤Â»Î≈≈–Ú£©
 - Decrease Insertion Sort£®≤Â»Î≈≈–Ú£©£®_œ∞Ã‚2.1-3_£©
-- Selection Sort (—°‘Ò≈≈–Ú)£®_œ∞Ã‚œ∞Ã‚ 2.2-2_£©
+- Selection Sort (—°‘Ò≈≈–Ú)£®_œ∞Ã‚ 2.2-2_£©
+- Merge Sort (πÈ≤¢≈≈–Ú)
+
 
