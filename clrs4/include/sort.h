@@ -13,6 +13,8 @@ void insertionSort(int* list, int length);
  */
 void insertionSortDecrease(int* list, int length);
 
+void insertionSortRecursive(int* list, int length);
+
 /**
  * 算法导论（第四版）-第二章
  * 练习题 2.2-2-选择排序

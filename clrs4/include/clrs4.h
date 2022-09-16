@@ -9,3 +9,4 @@
 
 #include "sort.h"
 #include "util.h"
+#include "search.h"

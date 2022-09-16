@@ -113,3 +113,17 @@ void exchange(int* a, int* b) {
   *a = *b;
   *b = t;
 }
+
+void insertionSortRecursive(int* list, int length) {
+  if (length <= 1) {
+    return;
+  }
+  insertionSortRecursive(list, length - 1);
+  int key = *(list + length - 1);
+  int i = length - 2;
+  while (*(list + i) > key) {
+    *(list + i + 1) = *(list + i);
+    i--;
+  }
+  *(list + i + 1) = key;
+}
